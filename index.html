@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Bridge - Live Shipment Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="#" class="logo">SupplyBridge*</a>
+
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#">Blog &#x25BE;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Articles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Plans &#x25BE;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Freelancer</a></li>
+                        <li><a href="#">Startup</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="#" class="btn-login">Log In</a>
+            <a href="#" class="btn-signup">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        
+        <!-- Sliding Animated Heading -->
+        <div class="animation-stage">
+            <h1 id="watchme">Shipment #SB-4092 — En Route to Central Distribution Hub</h1>
+        </div>
+
+        <p>Welcome to the Supply Bridge Live Dispatch Board. Active freight corridors are scanned automatically across three regional checkpoints before final warehouse arrival.</p>
+        <p>Real-time transit milestones and hub check-ins for your current batch are recorded below:</p>
+
+        <!-- Shipment Checkpoint Log -->
+        <div class="log-box">
+            <h3>Live Freight Transit Log</h3>
+            <ul id="output"></ul>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Supply Bridge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const element = document.getElementById("watchme");
+        const output = document.getElementById("output");
+
+        function logEvent(message) {
+            const li = document.createElement("li");
+            li.textContent = message;
+            output.appendChild(li);
+        }
+
+        element.addEventListener("animationstart", (e) => {
+            logEvent(`Dispatched from Origin Port (Elapsed: ${e.elapsedTime}s)`);
+        });
+
+        element.addEventListener("animationiteration", (e) => {
+            logEvent(`Checkpoint Scan Verified — Transit Leg Completed at ${e.elapsedTime}s`);
+        });
+
+        element.addEventListener("animationend", (e) => {
+            logEvent(`Arrived at Supply Bridge Distribution Hub (Total Time: ${e.elapsedTime}s)`);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #343434;
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline wavy #0056b3;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+}
+
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item > a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 16px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item > a:hover {
+    background-color: #2a2a2a;
+    text-decoration: underline wavy #0056b3;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #1a1a1a;
+    min-width: 140px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.dropdown-menu li a {
+    color: #ffffff;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #2d2d2d;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login,
+.btn-signup {
+    color: #ffffff;
+    padding: 7px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-signup {
+    border: 1px solid #ffffff;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content Container */
+.main-container {
+    max-width: 850px;
+    width: 90%;
+    margin: 35px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+}
+
+/* Stage Box for Sliding Text */
+.animation-stage {
+    background-color: #1e1e1e;
+    border-left: 5px solid #0056b3;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+#watchme {
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+    white-space: nowrap;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 3;
+    animation-direction: normal;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+p {
+    line-height: 1.6;
+    color: #444444;
+    font-size: 15px;
+}
+
+code {
+    background-color: #f0f2f5;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* Event Output Log */
+.log-box {
+    margin-top: 25px;
+    background-color: #f8f9fa;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 16px 20px;
+}
+
+.log-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #1e1e1e;
+}
+
+#output {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #333333;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    color: #888888;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 14px;
+}
